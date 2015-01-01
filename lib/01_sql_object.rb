@@ -49,12 +49,7 @@ class SQLObject
   end
 
   def self.parse_all(results)
-    resultant_objects = []
-    results.each do |result|
-      resultant_objects << self.new(result)
-    end
-
-    resultant_objects
+    results.map { |result| self.new(result) }
   end
 
   def self.find(id)
