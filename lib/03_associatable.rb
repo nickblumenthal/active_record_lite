@@ -55,7 +55,6 @@ module Associatable
 
   def has_many(name, options = {})
     options = HasManyOptions.new(name, self.name, options)
-    p options
     define_method(name) do
       primary_key = self.send(options.primary_key)
       results = DBConnection.execute(<<-SQL, primary_key)
