@@ -61,7 +61,7 @@ class SQLObject
       WHERE
         #{self.table_name}.id = ?
     SQL
-    p result
+
     self.parse_all(result).first
   end
 
